@@ -1,0 +1,29 @@
+spring:
+ application:
+  name: spring-boot-security-oauth-google
+#  
+server:
+ port: 8082
+
+security:
+   oauth2:
+     client:
+        clientId: {id here}
+        clientSecret: {secret here}
+        accessTokenUri: https://www.googleapis.com/oauth2/v4/token
+        userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
+        tokenName: oauth_token
+        authenticationScheme: query
+        clientAuthenticationScheme: form
+        scope : 
+         - profile
+         - email
+      
+     resource:
+        userInfoUri: https://www.googleapis.com/oauth2/v3/userinfo
+        
+        
+        
+
+
+      

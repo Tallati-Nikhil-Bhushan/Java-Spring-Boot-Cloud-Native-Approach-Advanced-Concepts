@@ -1,0 +1,33 @@
+spring:
+ application:
+  name: spring-boot-security-oauth
+# security:
+#  oauth2:
+#   client:
+#    registration:
+#     facebook:
+#      clientId : 
+#      clientSecret : 
+#      redirectUriTemplate : http://localhost:8082/api/v1/8082
+#  
+server:
+ port: 8082
+
+security:
+   oauth2:
+     client:
+        clientId: id_here
+        clientSecret: secret_here
+        accessTokenUri: https://graph.facebook.com/oauth/access_token
+        userAuthorizationUri: https://www.facebook.com/dialog/oauth
+        tokenName: oauth_token
+        authenticationScheme: query
+        clientAuthenticationScheme: form
+      
+     resource:
+        userInfoUri: https://graph.facebook.com/me
+        
+        
+
+
+      

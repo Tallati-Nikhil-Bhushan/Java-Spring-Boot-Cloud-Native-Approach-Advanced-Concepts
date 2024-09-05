@@ -1,0 +1,6 @@
+spring:
+ application:
+  name: normal-client
+
+server:
+  port: 8085

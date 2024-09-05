@@ -1,0 +1,20 @@
+spring:
+ application:
+  name: lb-service1
+
+#server PORT should be set to 0 in case of auto load balancing through gateway
+server:
+  port:
+    0
+        
+    
+eureka:
+  client:
+  #to regsiter this service Service Discovery
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+    instance-id: "${spring.application.name}:${instanceId:${random.value}}"

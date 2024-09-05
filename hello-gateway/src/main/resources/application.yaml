@@ -1,0 +1,30 @@
+spring:
+ application:
+  name: hello-gateway
+  
+#either this configuration for routes or the java configuration
+ cloud:
+  gateway:
+   routes:
+    - id: hello-service
+      uri: http://localhost:8051
+      predicates :
+       - Path=/service1/**
+    - id: another-service
+      uri: http://localhost:8052
+      predicates:
+       - Path=/service2/**
+
+management:
+ endpoints:
+  web:
+   exposure:
+    include: "*"
+ endpoint: 
+  health:
+    show-details: always
+  gateway:
+   enabled: true
+   
+server:
+ port: 8070

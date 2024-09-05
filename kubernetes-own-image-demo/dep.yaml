@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dep
+  labels:
+    app: docker-hub-demo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: docker-hub-demo
+  template:
+    metadata:
+      labels:
+        app: docker-hub-demo
+    spec:
+      containers:
+      - name: docker-spring-demo1
+        image: shahad7/docker-spring-demo2:v1
+        ports:
+        - containerPort: 8082

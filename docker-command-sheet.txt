@@ -1,0 +1,29 @@
+https://www.hostinger.com/tutorials/docker-cheat-sheet
+file:///D:/dockerjava/docker_cheatsheet.pdf
+
+docker version
+docker images
+docker ps 
+docker ps -a  or --all lists all containers
+docker pull nginx:1.23
+docker run nginx:1.23   blocks terminal
+docker -d or --detach nginx:1.23
+docker logs <containerid>
+docker stop <containerid>
+
+docker build -t node-app:1.0 .   to create an image 
+
+docker run -ti --rm <container-id> bash
+docker exec -it [container-id] bash         to enter a running container
+
+docker run -d --publish 9000:80 
+ 
+docker run -d --publish 9000:80 nginx:1.23
+or
+docker run -d -p 9000:80 nginx:1.23
+
+docker run --name web-app -d -p 9000:80 nginx:1.23
+
+---------------------------------------
+docker tag hello-app:latest anilboppuri/dockerhub:hello-app
+docker push anilboppuri/dockerhub:hello-app

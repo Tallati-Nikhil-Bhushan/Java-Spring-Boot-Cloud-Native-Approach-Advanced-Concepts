@@ -1,0 +1,15 @@
+minikube start --driver=docker
+kubectl apply -f nginx-dep.yaml  or kubectl create -f nginx.yaml
+kubectl get deploymentsn / pods
+kubectl apply -f nginx-serv.yaml
+kubectl get svc -o wide
+# not working kubectl expose deployment nginx-svc --type=NodePort --port=8080
+kubectl port-forward service/nginx-svc 7080:80
+go to browser or curl  localhost:7080 
+kubectl exec -it service/nginx-svc -- bash    to enter into the running container on POD to make changes to your index.html 
+
+kubectl scale deployment nginx-deployment --replicas=<replica_count>
+
+kubectl describe nodes <node-name>
+kubectl describe pods <pod-name>
+kubectl cluster-info
